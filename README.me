@@ -1,0 +1,94 @@
+# Proyecto semaforo
+
+# Requerimientos del Sistema
+
+## 1. Requerimientos Funcionales
+
+1. **Registro de usuarios:** Permitir que los usuarios ingresen sus datos.
+2. **Inicio de sesión:** Permitir el acceso mediante usuario y contraseña.
+3. **Consulta de información:** Mostrar la información disponible en el sistema.
+4. **Búsqueda:** Permitir buscar información mediante palabras clave.
+5. **Contacto:** Permitir que los usuarios envíen consultas o mensajes.
+
+## 2. Requerimientos No Funcionales
+
+1. **Usabilidad:** La página debe ser fácil de utilizar y entender.
+2. **Seguridad:** Proteger los datos personales de los usuarios.
+3. **Rendimiento:** Cargar las páginas en poco tiempo.
+4. **Compatibilidad:** Funcionar en distintos navegadores y dispositivos.
+5. **Disponibilidad:** Estar accesible para los usuarios cuando la necesiten.
+
+# Historias de Usuario
+
+## Historia de Usuario 1: Registro
+**Como** usuario,  
+**quiero** registrarme en el sistema,  
+**para** poder acceder a sus funcionalidades.
+
+## Historia de Usuario 2: Inicio de sesión
+**Como** usuario registrado,  
+**quiero** iniciar sesión con mis datos,  
+**para** ingresar a mi cuenta de forma segura.
+
+## Historia de Usuario 3: Consultar información
+**Como** usuario,  
+**quiero** consultar la información disponible,  
+**para** encontrar los datos que necesito.
+
+## Historia de Usuario 4: Modificar datos
+**Como** usuario,  
+**quiero** modificar mis datos personales,  
+**para** mantener mi información actualizada.
+
+## Historia de Usuario 5: Cerrar sesión
+**Como** usuario,  
+**quiero** cerrar sesión,  
+**para** proteger mi cuenta cuando termine de usar el sistema.
+
+## Codigo del semaforo
+int rojo = 8;
+int amarillo = 9;
+int verde = 10;
+
+int estado = 0;
+
+void setup() {
+  pinMode(rojo, OUTPUT);
+  pinMode(amarillo, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+
+void loop() {
+  for (int i = 0; i < 3; i++) {
+
+    if (estado == 0) {
+      digitalWrite(verde, HIGH);
+      digitalWrite(amarillo, LOW);
+      digitalWrite(rojo, LOW);
+      delay(5000);
+      estado = 1;
+    }
+
+    if (estado == 1) {
+      digitalWrite(verde, LOW);
+      digitalWrite(amarillo, HIGH);
+      digitalWrite(rojo, LOW);
+      delay(2000);
+      estado = 2;
+    }
+
+    if (estado == 2) {
+      digitalWrite(verde, LOW);
+      digitalWrite(amarillo, LOW);
+      digitalWrite(rojo, HIGH);
+      delay(5000);
+      estado = 0;
+    }
+
+## lista de precio
+Placa arduino $10397,77
+Leds $1932,03
+Resistencias 220Ω $1905,02
+Cable USB	$2550,20
+Protoboard 	$3195,37
+Cables Macho-Macho $2925,30
